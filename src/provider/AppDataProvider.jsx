@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getProducts, getContent, getCategories } from "./api"
 import { DataContext } from "./context"
 
-function DataProvider({ children }) {
+function AppDataProvider({ children }) {
   const [products, setProducts] = useState(null)
   const [content, setContent] = useState(null)
   const [categories, setCategories] = useState(null)
@@ -22,4 +22,4 @@ function DataProvider({ children }) {
   )
 }
 
-export default DataProvider
+export default AppDataProvider

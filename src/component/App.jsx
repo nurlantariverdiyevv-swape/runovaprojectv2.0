@@ -1,13 +1,13 @@
 import { Outlet, ScrollRestoration } from "react-router-dom"
 import Header from "./Header"
 import Footer from "./Footer"
+import AppDataProvider from "../provider/AppDataProvider"
 import BasketProvider from "../provider/BasketProvider"
 import WishlistProvider from "../provider/WishlistProvider"
-import DataProvider from "../provider/dataProvider"
 
 function App() {
   return (
-    <DataProvider>
+    <AppDataProvider>
       <BasketProvider>
         <WishlistProvider>
           <ScrollRestoration />
@@ -18,7 +18,7 @@ function App() {
           <Footer />
         </WishlistProvider>
       </BasketProvider>
-    </DataProvider>
+    </AppDataProvider>
   )
 }
 
