@@ -22,13 +22,13 @@ function Header() {
                 <Link to="/"><img src="/assets/img/runovalogo.png" alt="Runova" className="h-7 lg:h-8" /></Link>
 
                 {/* Center: categories (desktop only) */}
-                <nav className="hidden lg:flex gap-5 text-sm font-semibold">
+                <nav className="hidden lg:flex gap-[21px] text-[15px] font-semibold">
                     <NavLink to="/shop" end className="hover:underline underline-offset-4">All</NavLink>
                     {content.menu.map(cat => <NavLink key={cat} to={`/shop/${cat.toLowerCase()}`} className="hover:underline underline-offset-4">{cat}</NavLink>)}
                 </nav>
 
                 {/* Right: login, wishlist, basket */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                     <Link to="/" className="hidden lg:flex items-center gap-2 text-sm font-semibold"><User size={20} strokeWidth={1.5} /> Log in</Link>
                     <Link to="/wishlist" className="relative">
                         <Heart size={22} strokeWidth={1.5} />
