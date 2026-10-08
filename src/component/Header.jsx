@@ -22,7 +22,7 @@ function Header() {
                 <Link to="/"><img src="/assets/img/runovalogo.png" alt="Runova" className="h-7 lg:h-8" /></Link>
 
                 {/* Center: categories (desktop only) */}
-                <nav className="hidden lg:flex gap-[21px] text-[18px] font-semibold">
+                <nav className="hidden lg:flex gap-[21px] text-[15px] font-semibold">
                     <NavLink to="/shop" end className="hover:underline underline-offset-4">All</NavLink>
                     {content.menu.map(cat => <NavLink key={cat} to={`/shop/${cat.toLowerCase()}`} className="hover:underline underline-offset-4">{cat}</NavLink>)}
                 </nav>
