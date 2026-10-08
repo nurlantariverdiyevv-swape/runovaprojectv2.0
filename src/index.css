@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+html, body {
+  overflow-x: clip; 
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-heading {
+  font-family: 'Urbanist', sans-serif;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
