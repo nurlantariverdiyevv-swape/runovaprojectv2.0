@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react"
 import { getProducts, getContent, getCategories } from "./api"
-import { DataContext } from "./context"
 
-function AppDataProvider({ children }) {
-  const [products, setProducts] = useState(null)
-  const [content, setContent] = useState(null)
-  const [categories, setCategories] = useState(null)
+function AppDataProvider() {
+  const [products, setProducts] = useState([])
+  const [content, setContent] = useState({menu: [], activities: [], banners: [], sortOptions: [], paymentLogos: [], footer: []})
+  const [categories, setCategories] = useState({})
 
   useEffect(() => {
     getProducts().then(data => setProducts(data))
@@ -13,13 +12,7 @@ function AppDataProvider({ children }) {
     getCategories().then(data => setCategories(data))
   }, [])
 
-  if (!products || !content || !categories) return null
-
-  return (
-    <DataContext value={{products, content, categories}}>
-      {children}
-    </DataContext>
-  )
+  return {products, content, categories}
 }
 
 export default AppDataProvider

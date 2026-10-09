@@ -1,15 +1,10 @@
 import { useReducer } from "react"
 import basketReducer from "./basketReducer"
-import { BasketContext } from "./context"
 
-function BasketProvider({ children }) {
+function BasketProvider() {
   const [basket, dispatchBasket] = useReducer(basketReducer, localStorage.runova_basket ? JSON.parse(localStorage.runova_basket) : [])
 
-  return (
-    <BasketContext value={{basket, dispatchBasket}}>
-      {children}
-    </BasketContext>
-  )
+  return {basket, dispatchBasket}
 }
 
 export default BasketProvider

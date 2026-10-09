@@ -1,7 +1,6 @@
 import { useState } from "react"
-import { WishlistContext } from "./context"
 
-function WishlistProvider({ children }) {
+function WishlistProvider() {
   const [wishlist, setWishlist] = useState(localStorage.runova_wishlist ? JSON.parse(localStorage.runova_wishlist) : [])
 
   function saveWishlist(list) {
@@ -14,11 +13,7 @@ function WishlistProvider({ children }) {
     else saveWishlist([...wishlist, id])
   }
 
-  return (
-    <WishlistContext value={{wishlist, toggleWishlist, clearWishlist: () => saveWishlist([])}}>
-      {children}
-    </WishlistContext>
-  )
+  return {wishlist, toggleWishlist, clearWishlist: () => saveWishlist([])}
 }
 
 export default WishlistProvider
